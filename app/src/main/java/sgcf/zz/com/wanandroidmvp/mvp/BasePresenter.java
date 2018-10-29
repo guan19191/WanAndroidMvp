@@ -7,27 +7,19 @@ import java.lang.ref.WeakReference;
  * Created on 2018/10/26 15:30.
  * Desc:WanAndroidMvp
  */
-public abstract class BasePresenter<M extends IModel, V extends BaseMvpView> implements IPresenter {
-    WeakReference<V> viewReference;
-    WeakReference<M> mModelReference;
-
-    public BasePresenter(WeakReference<V> viewReference, M mModel) {
-        this.viewReference = viewReference;
-        this.mModelReference = new WeakReference<>(mModel);
-        onStart();
-    }
+public abstract class BasePresenter<V extends BaseMvpView> implements IPresenter {
+    private WeakReference<V> viewReference;
 
     public BasePresenter() {
         onStart();
     }
-
-    public BasePresenter(WeakReference<V> viewReference) {
-        this.viewReference = viewReference;
+    public BasePresenter(V view) {
+        this.viewReference = new WeakReference<>(view);
         onStart();
     }
 
-    public void attachView(V view) {
-        viewReference = new WeakReference<V>(view);
+    void attachView(V view) {
+        viewReference = new WeakReference<>(view);
     }
 
 
@@ -49,9 +41,6 @@ public abstract class BasePresenter<M extends IModel, V extends BaseMvpView> imp
         return viewReference.get();
     }
 
-    public M getModel() {
-        return mModelReference.get();
-    }
 
     @Override
     public void onStart() {
@@ -62,7 +51,5 @@ public abstract class BasePresenter<M extends IModel, V extends BaseMvpView> imp
     public void onDestroy() {
         viewReference.clear();
         viewReference = null;
-        mModelReference.clear();
-        mModelReference = null;
     }
 }

@@ -6,5 +6,7 @@ package sgcf.zz.com.wanandroidmvp.mvp;
  * Desc:WanAndroidMvp
  */
 public interface BaseMvpView {
+    void showLoading();
 
+    void hideLoading();
 }

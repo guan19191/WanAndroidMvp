@@ -19,3 +19,7 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+#保留native的方法名和 包含native方法的类的类名 不受混淆
+#-keepclasseswithmembernames class  *{
+#        native <method>;
+#}

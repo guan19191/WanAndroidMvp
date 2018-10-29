@@ -10,7 +10,7 @@ import butterknife.Unbinder;
  * Created on 2018/10/26 15:41.
  * Desc:WanAndroidMvp
  */
-public abstract class BaseMvpActivity<V extends BaseMvpView, P extends BasePresenter<V>> extends BaseActivity implements BaseMvpView {
+public abstract class BaseMvpActivity<V extends BaseMvpView, P extends BasePresenter<V>> extends BaseActivity {
 
     private P mPresenter;
     private Unbinder unbinder;
@@ -25,7 +25,10 @@ public abstract class BaseMvpActivity<V extends BaseMvpView, P extends BasePrese
         setContentView(getLayoutId());
         bindView();
         initData();
+        initListener();
     }
+
+    protected abstract void initListener();
 
     protected abstract void initData();
 

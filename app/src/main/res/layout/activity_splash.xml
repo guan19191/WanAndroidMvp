@@ -5,15 +5,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
         tools:context=".splash.SplashActivity">
-    <com.bigkoo.convenientbanner.ConvenientBanner
-            android:id="@+id/banner_splash"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:autoTurningTime="1000"
-            app:canLoop="true">
 
-    </com.bigkoo.convenientbanner.ConvenientBanner>
     <TextView
             android:id="@+id/tv_main_test"
             android:layout_width="70dp"
@@ -23,8 +17,7 @@
             android:layout_marginRight="15dp"
             android:layout_marginTop="15dp"
             android:textColor="@android:color/white"
+            android:textSize="16sp"
             android:gravity="center"
-            android:background="@drawable/bakground_splash_timer"
-    />
-
+            android:background="@drawable/bakground_splash_timer"/>
 </RelativeLayout>

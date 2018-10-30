@@ -48,4 +48,6 @@ dependencies {
 
     //banner  地址变ConvenientBanner 大写了，额。。。
     compile 'com.bigkoo:ConvenientBanner:2.1.4'
+    //沉浸式状态栏
+//    implementation 'com.gyf.immersionbar:immersionbar:2.3.2-beta01'
 }

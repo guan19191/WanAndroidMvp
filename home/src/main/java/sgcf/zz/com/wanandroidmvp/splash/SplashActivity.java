@@ -6,13 +6,16 @@ import android.widget.TextView;
 import butterknife.BindView;
 import sgcf.zz.com.wanandroidmvp.R;
 import sgcf.zz.com.wanandroidmvp.mvp.BaseMvpActivity;
+import sgcf.zz.com.wanandroidmvp.util.SPConfigKey;
+import sgcf.zz.com.wanandroidmvp.util.SPUtil;
 
 public class SplashActivity extends BaseMvpActivity<SplashView, SplashPresenter> implements SplashView, View.OnClickListener {
 
 
     @BindView(R.id.tv_main_test)
     TextView tvMainTest;
-//    @BindView(R.id.banner_splash)
+    private Boolean isLogin;
+    //    @BindView(R.id.banner_splash)
 //    ConvenientBanner bannerSplash;
 
     @Override
@@ -33,6 +36,12 @@ public class SplashActivity extends BaseMvpActivity<SplashView, SplashPresenter>
 
     @Override
     protected void initData() {
+        isLogin = (Boolean) SPUtil.getParam(SplashActivity.this, SPConfigKey.IS_LOGIN, false);
+        if (isLogin) {
+
+        } else {
+
+        }
 
     }
 

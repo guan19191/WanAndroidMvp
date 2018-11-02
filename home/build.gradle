@@ -1,3 +1,9 @@
+println isDebug.toBoolean()
+//if (isDebug.toBoolean()) {
+//    apply plugin: 'com.android.library'
+//} else {
+//    apply plugin: 'com.android.application'
+//}
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'

@@ -8,7 +8,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/commonlibrary" />
+            <option value="$PROJECT_DIR$/googlemvp" />
             <option value="$PROJECT_DIR$/home" />
+            <option value="$PROJECT_DIR$/httplibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -12,8 +12,8 @@ import butterknife.Unbinder;
  */
 public abstract class BaseMvpActivity<V extends BaseMvpView, P extends BasePresenter<V>> extends BaseActivity {
 
-    private P mPresenter;
-    private Unbinder unbinder;
+    public P mPresenter;
+    public Unbinder unbinder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

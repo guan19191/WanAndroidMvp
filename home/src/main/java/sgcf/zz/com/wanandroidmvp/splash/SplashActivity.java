@@ -1,17 +1,21 @@
 package sgcf.zz.com.wanandroidmvp.splash;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import butterknife.BindView;
 import sgcf.zz.com.wanandroidmvp.R;
+import sgcf.zz.com.wanandroidmvp.login.LoginActivity;
 import sgcf.zz.com.wanandroidmvp.mvp.BaseMvpActivity;
+import sgcf.zz.com.wanandroidmvp.util.RouteUtil;
 import sgcf.zz.com.wanandroidmvp.util.SPConfigKey;
 import sgcf.zz.com.wanandroidmvp.util.SPUtil;
 
 public class SplashActivity extends BaseMvpActivity<SplashView, SplashPresenter> implements SplashView, View.OnClickListener {
 
 
+    private static final String TAG = SplashActivity.class.getSimpleName();
     @BindView(R.id.tv_main_test)
     TextView tvMainTest;
     private Boolean isLogin;
@@ -37,10 +41,11 @@ public class SplashActivity extends BaseMvpActivity<SplashView, SplashPresenter>
     @Override
     protected void initData() {
         isLogin = (Boolean) SPUtil.getParam(SplashActivity.this, SPConfigKey.IS_LOGIN, false);
+        Log.e(TAG, "initData: "+isLogin );
         if (isLogin) {
 
         } else {
-
+            RouteUtil.jumpActivity(this, null, LoginActivity.class);
         }
 
     }

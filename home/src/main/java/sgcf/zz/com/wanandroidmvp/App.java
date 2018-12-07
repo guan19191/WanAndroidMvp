@@ -2,6 +2,7 @@ package sgcf.zz.com.wanandroidmvp;
 
 import android.app.Application;
 import android.content.Context;
+import timber.log.Timber;
 
 /**
  * @Author admin
@@ -15,6 +16,9 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         context = this;
+        if (BuildConfig.DEBUG) {
+            Timber.plant(new Timber.DebugTree());
+        }
     }
 
     public static Context getAppContext() {

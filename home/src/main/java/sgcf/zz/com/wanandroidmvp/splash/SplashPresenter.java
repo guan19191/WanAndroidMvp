@@ -9,4 +9,5 @@ import sgcf.zz.com.wanandroidmvp.mvp.BasePresenter;
  */
 public class SplashPresenter extends BasePresenter<SplashView> {
 
+
 }
